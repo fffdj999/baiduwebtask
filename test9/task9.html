@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				background-color: #2A2E3D;
+			}
+			/*顶栏*/
+			
+			header {
+				width: 100%;
+				height: 55px;
+				/*min-width: 560px;*/
+				min-width: 1150px;
+				background-color: #2189bf;
+				position: relative;
+			}
+			
+			header>img {
+				margin-top: 10px;
+				margin-left: 50px;
+			}
+			
+			.search {
+				position: absolute;
+				right: 155px;
+				top: 20%;
+			}
+			
+			.search>img {
+				margin-top: 5px;
+				position: relative;
+				left: 35px;
+				top: 4px;
+			}
+			
+			.search>input {
+				width: 242px;
+				height: 26px;
+				border-radius: 26px;
+				padding-left: 35px;
+				padding-right: 35px;
+			}
+			
+			.login {
+				position: absolute;
+				right: 90px;
+				top: 25%;
+			}
+			
+			.login>img {
+				position: relative;
+				right: 10px;
+				top: 3px;
+			}
+			
+			.login>a {
+				position: relative;
+				color: white;
+				text-decoration: none;
+				right: 10px;
+				font-size: 12px;
+				line-height: 28px;
+			}
+			/*侧栏*/
+			.asideandcontainer {
+				min-width: 1150px;
+				position: relative;
+			}
+			
+			aside {
+				width: 260px;
+				background-color: #2a2e3d;
+				display: inline-block;
+			}
+			
+			.user {
+				position: absolute;
+				width: 260px;
+				height: 150px;
+			}
+			
+			.user-avatar>img {
+				margin-top: 15px;
+				margin-left: 45px;
+			}
+			
+			.user-avatar>p {
+				position: absolute;
+				left: 120px;
+				top: 35px;
+				margin: 0;
+				color: white;
+			}
+			
+			.user-stars {
+				position: absolute;
+				left: 50px;
+				top: 90px;
+				color: #6e8095;
+			}
+			
+			.user-stars::after {
+				content: '';
+				width: 1px;
+				height: 26px;
+				background-color: #6e8095;
+				position: absolute;
+				left: 60px;
+				top: 8px;
+			}
+			
+			.user-fans {
+				position: absolute;
+				left: 150px;
+				top: 90px;
+				color: #6E8095;
+			}
+			
+			.table {
+				padding-top: 160px;
+				padding-left: 40px;
+			}
+			
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul>li {
+				font-size: 15px;
+				margin-top: 20px;
+			}
+			
+			ul>li>a {
+				text-decoration: none;
+				color: #6E8095;
+				font-size: 12px;
+			}
+			
+			.first-floorli {
+				margin-bottom: 20px;
+			}
+			
+			.second-floorli {
+				margin-left: 20px;
+			}
+			
+			.third-floorli {
+				margin-left: 20px;
+			}
+			/*主界面*/
+			
+			.container {
+				width: calc(100% - 264px);
+				min-width: 800px;
+				background-color: #eeeded;
+				float: right;
+				top: 0;
+				right: 0;
+			}
+			
+			.navigation {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				background-color: white;
+			}
+			.navigation>p{
+				margin: 0;
+				margin-left: 20px;
+				color: #6E8095;
+			}
+			.rows{
+				width: 100%;
+				position: relative;
+				display: inline-block;
+				padding: 20px;
+			}
+			.rows>div{
+				float: left;
+				background-color: white;
+				display: inline-block;
+				margin: 20px;
+			}
+			.col-md-12{
+				width: calc(100% - 80px);
+				height: 80px;
+			}
+			.col-md-3{
+				width: calc(25% - 50px);
+				height: 80px;
+			}
+			.col-md-7{
+				width: calc(58.33% - 60px);
+				height: 300px;
+			}
+			.col-md-5{
+				width: calc(41.66% - 60px);
+				height: 300px;
+			}
+			.col-md-4{
+				width: calc(33.33% - 60px);
+				height: 250px;
+			}
+			.col-md-8{
+				width: calc(66.66% - 60px);
+				height: 250px;
+			}
+			
+			.col-md-12>div{
+				float: left;
+				width: 25%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<img src="img/task9/task_head_1.jpg" />
+			<div class="search">
+				<img src="img/task9/task_head_2.png" />
+				<input type="text" name="" id="" value="" />
+			</div>
+			<div class="login">
+				<img src="img/task9/task_head_3.jpg" />
+				<a href="">登录</a>
+			</div>
+		</header>
+
+		<div class="asideandcontainer">
+			<aside>
+				<div class="user">
+					<div class="user-avatar">
+						<img src="img/task9/task_aside_1.jpg" />
+						<p>ABC123</p>
+					</div>
+					<div class="user-stars">
+						110<br />收藏
+					</div>
+					<div class="user-fans">
+						313<br />粉丝
+					</div>
+				</div>
+
+				<div class="table">
+					<ul class="first-floor">
+						<li class="first-floorli"><img src="img/task9/task_aside_2.jpg" />
+							<a href="" style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;个人报表</a>
+							<ul class="second-floor">
+								<li class="second-floorli"><img src="img/task9/task_aside_7.jpg" />
+									<a href="">&nbsp;&nbsp;&nbsp;&nbsp;文件一</a>
+								</li>
+								<li class="second-floorli"><img src="img/task9/task_aside_6.jpg" />
+									<a href="" style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;文件二</a>
+									<ul class="third-floor">
+										<li class="third-floorli"><img src="img/task9/task_aside_8.jpg" />
+											<a href="" style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;文档1</a>
+										</li>
+										<li class="third-floorli"><img src="img/task9/task_aside_9.jpg" />
+											<a href="">&nbsp;&nbsp;&nbsp;&nbsp;文档2</a>
+										</li>
+									</ul>
+								</li>
+								<li class="second-floorli"><img src="img/task9/task_aside_7.jpg" />
+									<a href="">&nbsp;&nbsp;&nbsp;&nbsp;文件三</a>
+								</li>
+							</ul>
+						</li>
+						<li class="first-floorli"><img src="img/task9/task_aside_3.jpg" />
+							<a href="">&nbsp;&nbsp;&nbsp;&nbsp;个人收藏</a>
+						</li>
+						<li class="first-floorli"><img src="img/task9/task_aside_4.jpg" />
+							<a href="">&nbsp;&nbsp;&nbsp;&nbsp;我的分享</a>
+						</li>
+						<li class="first-floorli"><img src="img/task9/task_aside_3.jpg" />
+							<a href="">&nbsp;&nbsp;&nbsp;&nbsp;图库</a>
+						</li>
+						<li class="first-floorli"><img src="img/task9/task_aside_3.jpg" />
+							<a href="">&nbsp;&nbsp;&nbsp;&nbsp;成长记录</a>
+						</li>
+						<li class="first-floorli"><img src="img/task9/task_aside_5.jpg" />
+							<a href="">&nbsp;&nbsp;&nbsp;&nbsp;账户信息</a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<div class="container">
+				<div class="navigation">
+					<p>C站/个人报表/文件一/文档一</p>
+				</div>
+				<div class="container-main">
+					<div class="rows">
+						<div class="col-md-12">
+							<div class="cm12-div1">
+								<label for="searchnum">查询项</label>
+								<select name="" id="searchnum">
+									<option value="1">第一项</option>
+									<option value="2">第二项</option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">买方</label>
+								<select name="" id="searchnum">
+									<option value="1">小A</option>
+									<option value="2">小B</option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">卖方</label>
+								<select name="" id="searchnum">
+									<option value="1">小C</option>
+									<option value="2">小D</option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">日期</label>
+								<select name="" id="searchnum">
+									<option value="1">2016-04-01</option>
+									<option value="2"></option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">人数</label>
+								<select name="" id="searchnum">
+									<option value="1">10人</option>
+									<option value="2">20人</option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">总耗时</label>
+								<select name="" id="searchnum">
+									<option value="1">8天</option>
+									<option value="2">10天</option>
+								</select>
+							</div>
+							<div class="cm12-div2">
+								<label for="searchnum">成交项</label>
+								<select name="" id="searchnum">
+									<option value="1">10项</option>
+									<option value="2">20项</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-12">
+							
+						</div>
+						<div class="col-md-3">
+							
+						</div>
+						<div class="col-md-3">
+							
+						</div>
+						<div class="col-md-3">
+							
+						</div>
+						<div class="col-md-3">
+							
+						</div>
+						<div class="col-md-7">
+							
+						</div>
+						<div class="col-md-5">
+							
+						</div>
+						<div class="col-md-4">
+							
+						</div>
+						<div class="col-md-8">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
