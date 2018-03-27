@@ -1,0 +1,287 @@
+java web一般都是用框架的，Struts的话就是比较经典的MVC的框架。
+
+java ee(以前叫j2ee)开发 框架用哪些记得找找看。
+
+ssh项目   三大框架 struts spring hibernate，后面2个可能很少用了
+
+java 方向定下来 方向：java web
+
+一、Java Se（Java基础部分）结束，进入Java EE部分，Java EE开始前需要先学习一点Web前端开发，明天看。（3/10	2018）
+
+二、今天看到html部分5.9，明天开始css。（22:04	3/11	2018）
+可以在B站上找找看前端代码具体是在哪里写的。
+PS:可以做个地狱少女的网站，或者空雅弹棋（比较难）。
+
+三、慕课网html+css基础课程学到第14章，第15章先不看了，明天继续css的学习。（22:28	3/12）
+
+四、百度前端技术学院项目实战 任务一 完成，明天继续实战任务。（17:30	3/13）
+
+五、任务二，ul h1这种元素（目前就知道这两个，没发现规律）本身有自己的padding margin数值的。
+1、ul的padding-left是40px，ul自带上下16px的margin，body默认margin为8px；
+2、能用border尽量用border。
+3、css不要一下子想到的全写上去，每次少写一点。
+4、父元素是块状元素才能用text-align:center对行内元素类型的子元素进行居中。（22:10	3/14）
+任务二基本完成，明天开始任务三(23:51)
+
+六、今天预计完成三栏式布局。（13:32	3/15）
+1、浮动模型就是让块状元素在同一行显示，浮动是在当前行浮动的，不会浮动到前一个元素所在的上一行，如果上一行的
+前一个元素也是浮动元素，则会浮动到上一行。
+2、父元素float会影响直接子元素的display:table cell，vertical-align（变换父元素为table元素，对子元素进行垂直居中排列），导致
+直接子元素无法垂直居中。即父元素float和display:table cell，vertical-align无法同时使用。
+3、常常会遇到多级父元素都要使用height：100%直到从html元素那里继承到height的值。
+4、尝试需要左右布局的页面布局时，可以先试一下position:absolute。
+5、overflow:hidden，写在父元素里（其子元素里有float的元素），如果子元素的高度超过父元素，那么父元素的高度会跟着变大。
+父元素的高度可以不用写，默认是0，之后会跟着子元素变化。（23：24	3/15）
+
+七、为防止三栏式布局的浮动元素因屏幕拉伸而塌陷，在三个浮动元素外再套一个div，设置div的总宽度width为100%，
+然后需要设置最小宽度min-width。min-width需要大于三个浮动元素的总宽度，中间的浮动元素记得也有最小宽度的。
+只要外面这个div的宽度大于3个元素的总宽度，浮动元素就不会被挤到下面一行去。
+
+任务四：1、float可以用来做文字环绕图片效果。（23:43	3/16）
+2、父元素display: flex;justify-content: center;align-items: center;这三行可以使每一个子元素都水平垂直居中。
+明天按任务四要求用position实现居中。（23:55	3/16）
+
+八、任务四：
+1、left等方位是在position：absolute中使用的（目前看来是只能在absolute中使用）。
+这个就是指用position来实现居中（9:55）
+left: 50%;top: 50%以元素左上角为基点，将元素移到水平垂直居中的位置;
+transform:translate(-50%, -50%)从原位置向左向上偏移自身长宽的50%。（10:55））
+2、子元素相对父元素进行定位，子元素只能用absolute，父元素可以是relative或absolute。
+元素如果是fixed，就是将屏幕范围作为父对象进行定位（个人理解）。（11:51）
+
+今天一天啥也没做。（21:47	3/17）
+
+九、任务五（3/18）
+1、float：2个width较大的float元素1、2后面跟一个width较小的非float元素3，则当元素1、元素2无法放在一行中时，
+元素2后面的元素3会挤到元素1后面（如果元素一后面还有空位的话）。
+即非float元素在多个float元素后面时，如果前面某个float元素的那行后面有空位，该非float元素会跟在这个float元素后面；
+如果都没有空位，会正常的在所有float元素的下面一行显示；如果有多个元素有空位，跟在第一个有空位的float元素后面。(11:30)
+补充：如果是非float元素1后面跟一个float元素2，则当元素1是块状元素使，元素2无法挤到元素1之前，是正常显示在下面一行的；
+当元素1是行内元素，元素2会挤到元素1之前。（16：00）
+补充的补充：实际上float的定义是向左或者向右平移，一直平移直到碰到了所处的容器的边框，或者碰到另外一个浮动的元素为止。
+所以下一行的float本来就不会跑到上一行去，除非上一行也是float元素或者是行内元素。
+
+2、偶尔多重嵌套div可以很好的把多个元素当成一整个大的元素，然后大的元素可以在更外面的元素里灵活操作，如float。(14:30)
+
+3、如果发现父元素的宽度被不知道哪个子元素给挡住而无法缩小，可以使用div>*使所有的子元素的width都为100%。(15:21)
+
+4、float会脱离标准文档流，特性是块状化及去空格化。
+然后向左或者向右平移，一直平移直到碰到了所处的容器的边框，或者碰到另外一个浮动的元素。
+
+十、任务六（3/19）
+1、float文本环绕：在文本当中环绕，具体实现时div中图片img是在一段文字当中的。注意选择器不要写错。
+
+任务六完成，明天开始任务七，任务七之前要看一下任务六的优秀学习笔记。
+
+十一、任务七（3/20）
+1、任务六优秀学习笔记回顾：①布局中最基本的是浮动和定位。
+②float在当前行浮动，如果上面几行也是float元素且行末有空位，跟在第一个有空位的float元素后面。
+③float元素脱离标准文档流，但是不脱离当前文档层，一样会挤开同一个父容器里的其他元素。（12:09）
+④分两列布局，左边float，右边是块状或行内元素，只要空间够，右边的元素是可以正常跟在float同一行后面的。
+
+十二、任务七（3/21）
+昨天看完任务六学习笔记后就没有继续看了。（12:00）
+1、li:nth-child(7):hover~.move{right: 460px;}
+transition:right 0.3s ease-in-out 0s; 
+标签li的父元素的第7个子元素，当鼠标停留在上面时，.move标签内的元素right的值会在0.3s内以由快到慢的过渡方式
+进行变化，延迟为0s。如果没有transition元素进行过渡方式的选择，伪类选择器内会直接将值改变，效果比较生硬。（14:45）
+（注：li和.move需要是同级元素，并且.move要在li后面）（16:48 3/23）
+
+
+2、absolute元素的默认位置应该是带有position的父元素的左上角（0,0）位置，但是有时候就是会显示在正常文档流的位置，
+有时候显示在父元素（0,0）位置，原因未知，所以目前解决方案是在需要absolute的元素的外面再套一层div。
+
+3、text-align：父元素是块状元素时才可以使用，使子元素水平居中对齐，子元素可以是块级或内联元素。
+子元素需要是明确的标签，如有多行不同标签元素均需单独水平居中，请使用块状标签进行换行。
+text-align是对每行的子元素进行水平居中。
+（注：因为float可以是元素块状化，所以父元素浮动情况下可以直接使用。）（23:13）
+
+4、块状元素有p，内联块状元素有img，select。
+
+5、z-index：元素景深，决定重叠部分显示哪个元素，数值大的显示在上方。
+
+6、html5新定义的标签：①header：标题 ②section：区块（正文分几块）③figure：图片 
+④figcaption：图片简介（写在fig里第一行或最后一行）。
+
+7、垂直居中（通用）：
+position：absolute，top：50%，子元素上边距离父元素上边50%父元素高度，
+transform：translate（0,-50%），子元素向上移动自身高度的50%。
+
+十三、任务七-第四部分（3/22）
+1、所有表单控件都必须放在<form></form>内部，表单控件包括①文本输入框<input type="text/password" />
+②文本域<textarea rows="行数" cols="列数">文本</textarea>
+③单选框、复选框<input   type="radio/checkbox"/>
+④下拉列表框<select></select> 
+⑤提交按钮<input type="submit"/>
+
+2、::after，伪元素，两个冒号。:hover，伪类，一个冒号。
+伪元素::after{content:''}可以通过absolute绝对定位在父元素后面或下面加一个中横线。
+
+3、>是第一层这个类名的子元素， （空格）是所有这个类名的子元素。
+
+4、select下拉列表框自定义样式：select{
+appearance:none; 清除样式
+background: url(img/section4_2.jpg) no-repeat right center;  在右中位置以不平铺的方式替换背景图片，
+可以用来更换下拉箭头图片，right，center可以用像素表示，100px 10px为距离左边100px 上边10px。
+outline:black;   select聚焦时候的边框颜色
+}
+
+5、option下拉选项自定义样式：只支持background-color改变背景颜色，不支持hover时变更原本的蓝色。
+需要自己写div模拟，听说可以用li来模拟。（目前没有能力在可预估的时间内完成，option样式改变的功能暂时不做）（17:02）
+
+6、z-index元素景深，有时候设置没有效果，原因目前未知，不过可以设置position:relative，2个盒模型上下相接，
+上面盒子如果有元素超出边框，重叠部分会自动被下面盒子覆盖。就是relative定位过的盒子会正常显示自己的内容，
+别的盒子超出的部分会被覆盖。（20:50）
+
+7、text-align无效：
+①父元素必须是块状元素，子元素可以是块状或行内元素，但子元素不能float，居中和向左右浮动相冲突，
+所以要注意居中的对象到底是哪个，是多个float元素的集合，则对这个集合进行居中，内部元素浮动。(21:00)
+②父元素必须是块状元素，子元素最好是行内元素，块状元素有时会失效无法居中，原因暂时不清楚。（11:54 3/23）
+
+8、box-sizing: border-box；效果是使元素能够水平等间距排列。设置在需要排列的子元素中或者父元素中或者二者都设置，都有效果，
+目前还不清楚具体区别，暂时只在子元素中设置。（22:00）
+上面理解应该是错误的，box-sizing:border-box是使被设置的元素不再计算盒子模型的内边距和边框，只计算实际宽/高度和外边距，
+这种盒模型更接近一般对于盒子的认识。（9:41 3/25）
+
+十四、任务七（3/23）
+1、第五部分完成。如果图片有固定的文字搭配说明，且样式不超过2种，可以用::before,::after这2个伪元素直接写样式，
+不需要写html部分。不过这样扩展性不太好，样式大于2种就要重新写html再写css样式了。（9:22）
+
+2、a href超链接，如果要更改超链接的样式，首先需要设置它为行内元素。（14:20）
+
+3、list-style:none,可以去除ul li前面的黑点。
+
+十五、任务八（3/24）
+1、再任务八之前看到下面任务十二CSS3新特性，了解到有些功能可以方便的用CSS3实现，比如说图片轮播功能，
+div{animation:mymove 5s infinite;}
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+5秒内left属性从0到200px变化，播放次数无限次。
+
+2、鼠标点击按钮切换图片：任务十二作业展示里有人用<a href>和#网址实现点击切换了，大致理解是本质上是点击按钮加载了新的页面，
+但是没有明显的跳转，#符号可能不是指向新的网址，这点暂时不深究。目前解决方案点击切换还是用之前导航栏的~（波浪号）来实现
+（还没有验证过），代码如下：
+css部分：
+/*点击i_1按钮的时候通知A执行要做的操作，比如图片从右侧滑动进场显示*/
+.i_1:checked ~.box .A{}
+
+html部分：
+<input type="radio" name='v' class="i_1" />
+<input type="radio" name='v' class="i_2" />
+<div class="box" id="box">
+    <img class="B" src="B.jpg" />
+    <img class="A" src="A.jpg" />
+    
+</div> 
+
+十六、任务八、任务九（3/25）
+1、网格布局bootstrap，有特定写法（基本的网格结构）
+<div class="container">
+<div class="row">
+ <div class="col-md-4"></div>
+ <div class="col-md-8"></div>
+container、row、col-md-4等最好不要自定义类名（标签名）。（9:14）
+
+bootstrap栅格布局（响应式局部）主体是container容器，即.container类用于固定宽度并支持响应式布局的容器。（11:59 3/26）
+响应式布局/自适应网页布局的核心是CSS3引入的media query模块，它的意思就是，自动探测屏幕宽度，然后加载相应的CSS文件，
+嵌入式CSS写法：@media screen and (max-device-width: 400px) 	//针对同一个CSS选择不同屏幕大小下的同一个标签的样式
+外部式CSS写法：<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 400px)" href="tinyScreen.css" /> 
+（14:46 3/26）							//针对多个CSS，其实就是就是把嵌入式写在一起的CSS分开写
+
+2、box-sizing: border-box，怪异盒模型：设置以后计算宽/高度时不再以width/height+padding+border+margin方式计算，
+而是以width/height+margin方式计算，盒子的大小就是这么大，但是与盒子内部子元素margin相接的还是盒子的padding部分，
+并不是说padding不计算进宽高度就不存在了。（9:56）
+
+3、bootstrap布局需要自己设置元素为float。（10:29）
+
+4、html小知识：a href链接地址如果为空的话，点击链接是跳转到当前页面顶部，效果和F5刷新一样。
+如果链接地址是#的话，不会刷新页面，会回到页面顶部，即只是在页面内部跳转，如果写成#t_1这样，页面会跳转到id为t_1的标签上，
+可以用来做点击切换图片功能。（14:24）
+
+5、overflow：hidden，直译是超出部分隐藏，之前是通过扩大父元素的宽高来达到float元素的清除浮动效果，对absolute子元素也有效。
+而假如规定父元素的高，则子元素超出部分会被隐藏，但是a href却可以#内部跳转然后显示被隐藏的部分，可以用来做图片切换效果。
+（14：39）
+经尝试hidden会隐藏超出部分，所以应该没办法自动扩大父元素适应子元素的，以前不知道怎么成功的。可能子元素为float时可以用
+overflow：hidden自动撑开父元素。（20:48）
+另外如果要父元素能被子元素撑开，设置display: inline-block;（20:28）
+
+6、最底层的父元素尽量不要用absolute，否则html会无法被撑开，导致页面无法全部渲染。（20:45）
+
+十七、任务十（3/26）
+1、弹性布局三件套：
+display: flex;					//设置父容器为弹性盒子
+flex-flow: row wrap;				//布局方向、是否多行排列
+justify-content: space-around/space-between;	//子元素们水平等间距排列（中间对齐/两边对齐）
+
+一些额外的常用属性：
+align-items:center;				//子元素们中线在同一高度，实际上是每个子元素都垂直居中，
+						//align直译是排成一条线
+order：1					//设置在子元素上，重新排列子元素的顺序，每个子元素都要设置
+（11:53）
+
+2、弹性容器里的弹性项目的float、clear和vertical-align属性将失效。（11:54）
+
+3、如果还记得以后看一下SEO优化，如页面描述内容description，
+<meta name="description" content="your description">
+
+4、body居中，又是这个居中问题，经常无法居中，现在决定对于body的居中就采用margin:0 auto（上下margin为0，左右自适应）。
+（18：00）
+注1：然后又发现body必须要设置具体宽度才能够用margin：0 auto实现居中（11:13）
+注2：想要完全搞明白水平居中问题，就必须明白text-align:center、margin:0的具体实现方式，
+text-align：center，文本对齐方式-中间对齐。每行元素以中间为准对齐排列，当某行只有一个元素时，即该元素水平居中。
+margin:0 auto，上下外边框为0，左右外边框相等。如字面意思，左右距离直接父容器壁的距离相等，值为auto时有时会无效，
+可能是同时设置了其为行内元素，或者是没有设置元素具体宽度，margin值为固定值时，无论行内还是块级元素都是有效的。
+解决方案1：（优先）
+body{text-align:center}
+.divbody{display:inline-block}
+子元素不能是块状元素，因为块状元素单独占据一行，无关该子元素的宽度，导致看起来像是没有居中。
+解决方案2：（子元素具体宽度已知）
+.divbody{width:100px;margin:0 auto;}
+
+5、overflow：处理元素塌方。（22:00）
+
+十八、任务十一（3/27）
+1、因为一般网页的宽度会设一个固定值，所以子元素在设定百分比宽的时候，
+即使直接父元素没有设置宽也可以获得父元素实际宽度的百分比的宽度，就是说百分比宽度获取的是父元素的实际宽度大小。
+而网页高度往往是不确定的，如果直接父元素没有设置高，子元素百分比会完全无效。
+总结：子元素宽度为百分比时，一定会产生变化；子元素高度为百分比时，如父元素高不是固定值，则不会变化。
+（9:49）
+
+2、<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+这句的效果是让html的宽度等于设备宽度。PC端设不设置无所谓，html的宽度就是浏览器窗口的宽度，
+移动端一定要设置才能让html的宽度等于当前设备（手机）屏幕的宽度。（10:25）
+
+3、
+①li:nth-child(7):hover~.move{right: 460px;}鼠标hover时通知move标签改变right值，
+move内部有transition:right 0.3s ease-in-out 0s时，right值按此方式改变。
+②div{animation:mymove 5s infinite;}
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+div标签生成时就执行mymove动画标签，5s内执行完成，执行无数次。
+②拓展用法：
+:target{
+	animation: 1.5s mymove linear;
+	animation-fill-mode: forwards;
+}
+URL带有#，指向文档内某个具体的元素。这个被链接的元素就是目标元素(target element)。
+:target 选择器可用于选取当前活动的目标元素。
+上面代码的意思就是链接指向的目标元素，为其定义属性，animation用在target选择器上，
+可以使被指向的元素播放动画，可以用来做图片轮播效果（图片为目标元素，需注意target选择器权重）
+（16:12）
+
+4、CSS3新特性：
+①tr:nth-child(odd){}			//tr的父元素的所有子元素中的偶数项
+②transition: width 1s ease-in-out 0s;	//如果宽度动态变化（各种通知事件hover,focus），将按照这条语句的方式进行改变
+③:target				//target选择器，用于选取当前活动的目标元素，性质上偏向于伪类（动作）
+					//当页面跳转到该目标元素时，执行target内的操作
+④animation:1.5s mymovein linear;	//1.5s内执行完mymovein关键帧标签（@keyframes）
+@keyframes mymovein{			//③④结合就是页面跳转到目标元素上时，目标元素播放动画，可做图片轮播效果
+from{}
+to{}
+}
